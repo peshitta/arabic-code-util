@@ -25,7 +25,7 @@ Following bundles are available:
 libraries and applications
 
 The package could also be downloaded directly from:
-[https://registry.npmjs.org/arabic-code-util/-/arabic-code-util-1.0.0.tgz](https://registry.npmjs.org/arabic-code-util/-/arabic-code-util-1.0.0.tgz)
+[https://registry.npmjs.org/arabic-code-util/-/arabic-code-util-1.0.1.tgz](https://registry.npmjs.org/arabic-code-util/-/arabic-code-util-1.0.1.tgz)
 
 ## More information
 
@@ -73,6 +73,7 @@ npm run build
     * [.isDiacritic](#module_arabicCodeUtil.isDiacritic) ⇒ <code>boolean</code>
     * [.isPunctuation](#module_arabicCodeUtil.isPunctuation) ⇒ <code>boolean</code>
     * [.isDotting](#module_arabicCodeUtil.isDotting) ⇒ <code>boolean</code>
+    * [.isDotted](#module_arabicCodeUtil.isDotted) ⇒ <code>boolean</code>
     * [.removeDotting](#module_arabicCodeUtil.removeDotting) ⇒ <code>string</code>
 
 <a name="module_arabicCodeUtil.consonants"></a>
@@ -176,6 +177,18 @@ Returns true if c is dotting character
 | Param | Type | Description |
 | --- | --- | --- |
 | c | <code>string</code> | input character |
+
+<a name="module_arabicCodeUtil.isDotted"></a>
+
+### arabicCodeUtil.isDotted ⇒ <code>boolean</code>
+Return true if input word has vowels or diacritics
+
+**Kind**: static constant of [<code>arabicCodeUtil</code>](#module_arabicCodeUtil)  
+**Returns**: <code>boolean</code> - true if word has vowels or diacritics  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| word | <code>string</code> | input Arabic Unicode word |
 
 <a name="module_arabicCodeUtil.removeDotting"></a>
 

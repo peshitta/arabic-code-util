@@ -77,14 +77,14 @@ describe('Util', () => {
   });
   it('Remove Dotting', () => {
     let word = 'أَبْجَدِي';
-    let expected = 'أبْجدي';
+    let expected = 'أبجدي';
     test.strictEqual(
       sut.removeDotting(word),
       expected,
       'أَبْجَدِي removeDotting'
     );
     word = 'أَلِفْبَائِي';
-    expected = 'ألفْبائي';
+    expected = 'ألفبائي';
     test.strictEqual(
       sut.removeDotting(word),
       expected,
@@ -92,7 +92,7 @@ describe('Util', () => {
     );
 
     word = 'الأَبْجَدِيَّة العَرَبِيَّة';
-    expected = 'الأبْجدية العربية';
+    expected = 'الأبجدية العربية';
     test.strictEqual(
       sut.removeDotting(word),
       expected,
@@ -109,5 +109,16 @@ describe('Util', () => {
     test.strictEqual(sut.removeDotting('_'), '_', '_ removeDotting');
     test.strictEqual(sut.removeDotting(''), '', "'' removeDotting");
     test.strictEqual(sut.removeDotting(' '), ' ', "' ' removeDotting");
+  });
+});
+describe('isDotted', () => {
+  const { isDotted } = sut;
+  it('Consonantal and vocalised isDotted', () => {
+    const empty = isDotted('');
+    const consonant = isDotted('الب');
+    const vocalised = isDotted('بِنْتُ');
+    test.strictEqual(empty, false, 'isDotted empty');
+    test.strictEqual(consonant, false, 'isDotted consonant only');
+    test.strictEqual(vocalised, true, 'isDotted vocalised');
   });
 });

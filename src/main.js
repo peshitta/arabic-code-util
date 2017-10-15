@@ -60,12 +60,12 @@ export const allConsonants = Object.freeze(consonants.concat(extraConsonants));
  */
 export const vowels = Object.freeze([
   '\u064E', //  َ Arabic fatha - Garshuni: a
+  '\u0670', //  ٰ Arabic letter superscript alef - Garshuni: long a
   '\u0650', //  ِ Arabic kasra - Garshuni: i
   '\u064F', //  ُ Arabic damma - Garshuni: u
   '\u064B', //  ً Arabic fathatan - Garshuni: an
   '\u064D', //  ٍ Arabic kasratan - Garshuni: in
-  '\u064C', //  ٌ Arabic dammatan - Garshuni: un
-  '\u0670' //  ٰ Arabic letter superscript alef - Garshuni: long a
+  '\u064C' //  ٌ Arabic dammatan - Garshuni: un
 ]);
 
 /**
@@ -74,10 +74,11 @@ export const vowels = Object.freeze([
  * @type { string[] }
 */
 export const diacritics = Object.freeze([
+  '\u0651', //  ّ Arabic shadda - Garshuni
+  '\u0652', //  ْ ARABIC SUKUN
   '\u0653', //  ٓ Arabic maddah above - Garshuni
   '\u0654', //  ٔ Arabic hamza above - Garshuni
-  '\u0655', //  َ Arabic hamza below - Garshuni
-  '\u0651' //  ّ Arabic shadda - Garshuni
+  '\u0655' //  َ Arabic hamza below - Garshuni
 ]);
 
 /**
@@ -133,6 +134,24 @@ export const isPunctuation = c => punctuation.indexOf(c) > -1;
  * @returns { boolean } true if c is dotting
  */
 export const isDotting = c => dotting.indexOf(c) > -1;
+
+/**
+ * Return true if input word has vowels or diacritics
+ * @param { string } word input Arabic Unicode word
+ * @returns { boolean } true if word has vowels or diacritics
+ */
+export const isDotted = word => {
+  if (!word) {
+    return false;
+  }
+  for (let i = 0, len = word.length; i < len; i++) {
+    const c = word.charAt(i);
+    if (isDotting(c)) {
+      return true;
+    }
+  }
+  return false;
+};
 
 /**
  * Remove dotting (vowels and diacritics), leaving consonantal word only.
