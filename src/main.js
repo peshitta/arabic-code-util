@@ -43,7 +43,13 @@ export const extraConsonants = Object.freeze([
   '\u0638', // ظ ARABIC LETTER ZAH
   '\u063A', // غ ARABIC LETTER GHAIN
   '\u0629', // ة ARABIC LETTER TEH MARBUTA
-  '\u0621' // ء Arabic Letter Hamza  - Garshuni hamzah
+  '\u0621', // ء Arabic Letter Hamza  - Garshuni hamzah
+  '\u0622', // آ ARABIC LETTER ALEF WITH MADDA ABOVE
+  '\u0623', // أ ARABIC LETTER ALEF WITH HAMZA ABOVE
+  '\u0623', // أ ARABIC LETTER ALEF WITH HAMZA ABOVE
+  '\u0624', // ؤ ARABIC LETTER WAW WITH HAMZA ABOVE
+  '\u0625', // إ ARABIC LETTER ALEF WITH HAMZA BELOW
+  '\u0626' // ئ ARABIC LETTER YEH WITH HAMZA ABOVE
 ]);
 
 /**
