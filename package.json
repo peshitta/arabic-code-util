@@ -40,6 +40,10 @@
     "url": "git+https://github.com/peshitta/arabic-code-util.git"
   },
   "keywords": [
+    "Arabic",
+    "Aramaic",
+    "Syriac",
+    "CAL",
     "Peshitta",
     "Peshitto",
     "Pshitta",
@@ -47,9 +51,6 @@
     "Sedra.js",
     "Sedrajs",
     "Sedra",
-    "Aramaic",
-    "Syriac",
-    "CAL",
     "Estrangela",
     "Estrangelo"
   ],
