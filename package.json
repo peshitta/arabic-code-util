@@ -1,6 +1,6 @@
 {
   "name": "arabic-code-util",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Arabic Unicode utilities",
   "main": "build/arabic-code-util.js",
   "mainMin": "build/arabic-code-util.min.js",
@@ -64,7 +64,7 @@
   "devDependencies": {
     "coveralls": "^3.0.0",
     "eslint": "^4.9.0",
-    "eslint-config-airbnb-base": "^12.0.2",
+    "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.7.0",
     "istanbul": "^0.4.5",
     "jsdoc-to-markdown": "^3.0.0",
