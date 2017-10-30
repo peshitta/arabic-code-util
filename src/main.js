@@ -1,4 +1,5 @@
 /** @module arabicCodeUtil */
+import { hasDotting, clearDotting } from 'aramaic-mapper';
 
 /**
  * Arabic base 22 consonants common to other semitic languages
@@ -145,38 +146,11 @@ export const isDotting = c => dotting.indexOf(c) > -1;
  * @param { string } word input Arabic Unicode word
  * @returns { boolean } true if word has vowels or diacritics
  */
-export const isDotted = word => {
-  if (!word) {
-    return false;
-  }
-  for (let i = 0, len = word.length; i < len; i++) {
-    const c = word.charAt(i);
-    if (isDotting(c)) {
-      return true;
-    }
-  }
-  return false;
-};
+export const isDotted = hasDotting(isDotting);
 
 /**
  * Remove dotting (vowels and diacritics), leaving consonantal word only.
  * @param { string } word input word to be processed
  * @returns { string } consonantal word
  */
-export const removeDotting = word => {
-  if (!word) {
-    return word;
-  }
-
-  let hasDotting = false;
-  const stack = [];
-  for (let i = 0, len = word.length; i < len; i++) {
-    const c = word.charAt(i);
-    if (isDotting(c)) {
-      hasDotting = true;
-    } else {
-      stack.push(c);
-    }
-  }
-  return hasDotting ? stack.join('') : word;
-};
+export const removeDotting = clearDotting(isDotting);

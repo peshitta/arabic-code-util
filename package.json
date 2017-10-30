@@ -1,6 +1,6 @@
 {
   "name": "arabic-code-util",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Arabic Unicode utilities",
   "main": "build/arabic-code-util.js",
   "mainMin": "build/arabic-code-util.min.js",
@@ -60,12 +60,14 @@
     "url": "https://github.com/peshitta/arabic-code-util/issues"
   },
   "homepage": "https://github.com/peshitta/arabic-code-util#readme",
-  "dependencies": {},
+  "dependencies": {
+    "aramaic-mapper": "^1.1.3"
+  },
   "devDependencies": {
     "coveralls": "^3.0.0",
-    "eslint": "^4.9.0",
+    "eslint": "^4.10.0",
     "eslint-config-airbnb-base": "^12.1.0",
-    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-import": "^2.8.0",
     "istanbul": "^0.4.5",
     "jsdoc-to-markdown": "^3.0.0",
     "mocha": "^4.0.1",
