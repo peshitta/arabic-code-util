@@ -25,7 +25,7 @@ Following bundles are available:
 libraries and applications
 
 The package could also be downloaded directly from:
-[https://registry.npmjs.org/arabic-code-util/-/arabic-code-util-1.0.5.tgz](https://registry.npmjs.org/arabic-code-util/-/arabic-code-util-1.0.5.tgz)
+[https://registry.npmjs.org/arabic-code-util/-/arabic-code-util-1.0.6.tgz](https://registry.npmjs.org/arabic-code-util/-/arabic-code-util-1.0.6.tgz)
 
 ## More information
 
@@ -61,10 +61,13 @@ npm run build
 ## API Reference
 
 * [arabicCodeUtil](#module_arabicCodeUtil)
+    * [.consonantsByName](#module_arabicCodeUtil.consonantsByName) : <code>Object.&lt;string, string&gt;</code>
     * [.consonants](#module_arabicCodeUtil.consonants) : <code>Array.&lt;string&gt;</code>
     * [.extraConsonants](#module_arabicCodeUtil.extraConsonants) : <code>Array.&lt;string&gt;</code>
     * [.allConsonants](#module_arabicCodeUtil.allConsonants) : <code>Array.&lt;string&gt;</code>
+    * [.vowelsByName](#module_arabicCodeUtil.vowelsByName) : <code>Object.&lt;string, string&gt;</code>
     * [.vowels](#module_arabicCodeUtil.vowels) : <code>Array.&lt;string&gt;</code>
+    * [.diacriticsByName](#module_arabicCodeUtil.diacriticsByName) : <code>Object.&lt;string, string&gt;</code>
     * [.diacritics](#module_arabicCodeUtil.diacritics) : <code>Array.&lt;string&gt;</code>
     * [.punctuation](#module_arabicCodeUtil.punctuation) : <code>Array.&lt;string&gt;</code>
     * [.dotting](#module_arabicCodeUtil.dotting) : <code>Array.&lt;string&gt;</code>
@@ -76,6 +79,12 @@ npm run build
     * [.isDotted](#module_arabicCodeUtil.isDotted) ⇒ <code>boolean</code>
     * [.removeDotting](#module_arabicCodeUtil.removeDotting) ⇒ <code>string</code>
 
+<a name="module_arabicCodeUtil.consonantsByName"></a>
+
+### arabicCodeUtil.consonantsByName : <code>Object.&lt;string, string&gt;</code>
+Arabic consonants by name
+
+**Kind**: static constant of [<code>arabicCodeUtil</code>](#module_arabicCodeUtil)  
 <a name="module_arabicCodeUtil.consonants"></a>
 
 ### arabicCodeUtil.consonants : <code>Array.&lt;string&gt;</code>
@@ -94,10 +103,22 @@ Garshuni extras
 All Arabic consonants relevant to Syriac including Garshuni
 
 **Kind**: static constant of [<code>arabicCodeUtil</code>](#module_arabicCodeUtil)  
+<a name="module_arabicCodeUtil.vowelsByName"></a>
+
+### arabicCodeUtil.vowelsByName : <code>Object.&lt;string, string&gt;</code>
+Arabic/Garshuni vowels by name
+
+**Kind**: static constant of [<code>arabicCodeUtil</code>](#module_arabicCodeUtil)  
 <a name="module_arabicCodeUtil.vowels"></a>
 
 ### arabicCodeUtil.vowels : <code>Array.&lt;string&gt;</code>
 Arabic/Garshuni vowels
+
+**Kind**: static constant of [<code>arabicCodeUtil</code>](#module_arabicCodeUtil)  
+<a name="module_arabicCodeUtil.diacriticsByName"></a>
+
+### arabicCodeUtil.diacriticsByName : <code>Object.&lt;string, string&gt;</code>
+Arabic/Garshuni diacritics by name
 
 **Kind**: static constant of [<code>arabicCodeUtil</code>](#module_arabicCodeUtil)  
 <a name="module_arabicCodeUtil.diacritics"></a>

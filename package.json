@@ -1,6 +1,6 @@
 {
   "name": "arabic-code-util",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Arabic Unicode utilities",
   "main": "build/arabic-code-util.js",
   "mainMin": "build/arabic-code-util.min.js",
