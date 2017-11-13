@@ -1,5 +1,5 @@
 /** @module arabicCodeUtil */
-import { hasDotting, clearDotting } from 'aramaic-mapper';
+import { hasDotting, clearDotting, getSort } from 'aramaic-mapper';
 
 /**
  * Arabic consonants by name
@@ -183,6 +183,77 @@ export const punctuation = Object.freeze([
   '\u0021' // ! Exclamation Mark - regular ASCII exclamation mark
 ]);
 
+const l = consonantsByName;
+const v = vowelsByName;
+const d = diacriticsByName;
+/**
+ * CAL to ordinal ASCII value. Used for sorting:
+ * a b c d e f g h i j k l m n o p q r s t u v w x
+ * y z { |
+ * @constant
+ * @type { Object.<string, string> }
+*/
+export const letterAsciiMap = Object.freeze(
+  Object.create(null, {
+    [l.alef]: { value: 'a', enumerable: true },
+    [l.beh]: { value: 'b', enumerable: true },
+    [l.jeem]: { value: 'c', enumerable: true },
+    [l.dal]: { value: 'd', enumerable: true },
+
+    [l.heh]: { value: 'e', enumerable: true },
+    [l.waw]: { value: 'f', enumerable: true },
+    [l.zain]: { value: 'g', enumerable: true },
+
+    [l.hah]: { value: 'h', enumerable: true },
+    [l.tah]: { value: 'i', enumerable: true },
+    [l.yeh]: { value: 'j', enumerable: true },
+
+    [l.kaf]: { value: 'k', enumerable: true },
+    [l.lam]: { value: 'l', enumerable: true },
+    [l.meem]: { value: 'm', enumerable: true },
+    [l.noon]: { value: 'n', enumerable: true },
+
+    [l.seen]: { value: 'o', enumerable: true },
+    [l.ain]: { value: 'p', enumerable: true },
+    [l.feh]: { value: 'q', enumerable: true },
+    [l.sad]: { value: 'r', enumerable: true },
+
+    [l.qaf]: { value: 's', enumerable: true },
+    [l.reh]: { value: 't', enumerable: true },
+    [l.sheen]: { value: 'u', enumerable: true },
+    [l.teh]: { value: 'v', enumerable: true },
+
+    [l.theh]: { value: 'v', enumerable: true }, // spirantized teh
+    [l.khah]: { value: 'k', enumerable: true }, // spirantized kaf
+    [l.thal]: { value: 'd', enumerable: true }, // spirantized dal
+    [l.dad]: { value: 'w', enumerable: true }, // unmatched in aramaic
+    [l.zah]: { value: 'x', enumerable: true }, // unmatched in aramaic
+    [l.ghain]: { value: 'c', enumerable: true }, // spirantized jeem
+
+    ة: { value: 'v', enumerable: true }, // ة ARABIC LETTER TEH MARBUTA
+    ء: { value: 'a', enumerable: true }, // ء Arabic Letter Hamza  - Garshuni hamzah
+    أ: { value: 'a', enumerable: true }, // أ ARABIC LETTER ALEF WITH HAMZA ABOVE
+    ؤ: { value: 'f', enumerable: true }, // ؤ ARABIC LETTER WAW WITH HAMZA ABOVE
+    إ: { value: 'a', enumerable: true }, // إ ARABIC LETTER ALEF WITH HAMZA BELOW
+    ئ: { value: 'j', enumerable: true }, // ئ ARABIC LETTER YEH WITH HAMZA ABOVE
+
+    [v.fatha]: { value: 'y', enumerable: true }, // a
+    [v.fathatan]: { value: 'y', enumerable: true }, // a
+    [v.superscriptAlef]: { value: 'z', enumerable: true }, // o
+    آ: { value: 'z', enumerable: true }, // o - ARABIC LETTER ALEF WITH MADDA ABOVE
+    [v.kasra]: { value: '{', enumerable: true }, // i
+    [v.kasratan]: { value: '{', enumerable: true }, // i
+    [v.damma]: { value: '|', enumerable: true }, // u
+    [v.dammatan]: { value: '|', enumerable: true }, // u
+
+    [d.shadda]: { value: '', enumerable: true },
+    [d.sukun]: { value: ',', enumerable: true },
+    [d.maddahAbove]: { value: '', enumerable: true },
+    [d.hamzaAbove]: { value: '', enumerable: true },
+    [d.hamzaBelow]: { value: '', enumerable: true }
+  })
+);
+
 /**
  * Vowels and diacritics: used for consonantal only mapping
  * @constant
@@ -238,3 +309,12 @@ export const isDotted = hasDotting(isDotting);
  * @returns { string } consonantal word
  */
 export const removeDotting = clearDotting(isDotting);
+
+/**
+ * Comparator function to be used for sorting words
+ * @static
+ * @param { string } word1 first word to compare
+ * @param { string } word2 second word to compare
+ * @returns { number } -1, 0, 1 depending on word sorting
+ */
+export const sort = getSort(letterAsciiMap, removeDotting);
